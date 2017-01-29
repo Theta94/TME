@@ -1128,14 +1128,14 @@ public final class MainFrameController {
             XMLResource appResource;
             ArrayList<Integer> prioritization;
             ArrayList<Integer> orderedForCover;
-            Integer j;
+            int sum = 0, pos = 1;
 
             // Standard Prioritization
             appResource = Project.getPrioritizationResource(prioParamaters[0] + "_Standard_" + prioParamaters[1] + "_" + prioParamaters[2] + ".xml");
             prioritization = ParsedMetric.getListFromPrio(appResource.getContentAsDOM());
-            orderedForCover = new ArrayList<>();
-            j = 1;
-            for (int i = 1; i < prioritization.size(); i++) {
+            orderedForCover = new ArrayList<>();;
+            orderedForCover.add(0, -1);
+            for (int i = 1; i <= prioritization.size()-1; i++) {
                 query = (XQueryService)DatabaseManager.getCollection(DBConnector.getURI() + DBConnector.getCollection().getName()).getService("XQueryService", "1.0");
                 query.setProperty(OutputKeys.INDENT, "yes");
                 query.setProperty(OutputKeys.ENCODING, "UTF-8");
@@ -1143,20 +1143,22 @@ public final class MainFrameController {
                 rs = query.execute(compiled);
                 recovered = rs.getResource(0).getContent().toString();
                 count = Integer.parseInt(recovered.substring(recovered.indexOf('>')+1, recovered.lastIndexOf('<')));
-                orderedForCover.add(count);
+                orderedForCover.add(i, count);
             }
-            Collections.sort(orderedForCover);
-            for (Integer pos : orderedForCover) {
-                    xysStandard.add(pos, j);
-                    j++;
+            for (int i = 1; i <= orderedForCover.size()-1; i++) {
+                sum = sum + orderedForCover.get(i);
+                xysStandard.add(sum, pos);
+                pos++;
             }
 
-            // General
+            sum = 0;
+            pos = 1;
+             // General
             appResource = Project.getPrioritizationResource(prioParamaters[0] + "_General_" + prioParamaters[1] + "_" + prioParamaters[2] + ".xml");
             prioritization = ParsedMetric.getListFromPrio(appResource.getContentAsDOM());
-            orderedForCover = new ArrayList<>();
-            j = 1;
-            for (int i = 1; i < prioritization.size(); i++) {
+            orderedForCover = new ArrayList<>();;
+            orderedForCover.add(0, -1);
+            for (int i = 1; i <= prioritization.size()-1; i++) {
                 query = (XQueryService)DatabaseManager.getCollection(DBConnector.getURI() + DBConnector.getCollection().getName()).getService("XQueryService", "1.0");
                 query.setProperty(OutputKeys.INDENT, "yes");
                 query.setProperty(OutputKeys.ENCODING, "UTF-8");
@@ -1164,20 +1166,22 @@ public final class MainFrameController {
                 rs = query.execute(compiled);
                 recovered = rs.getResource(0).getContent().toString();
                 count = Integer.parseInt(recovered.substring(recovered.indexOf('>')+1, recovered.lastIndexOf('<')));
-                orderedForCover.add(count);
+                orderedForCover.add(i, count);
             }
-            Collections.sort(orderedForCover);
-            for (Integer pos : orderedForCover) {
-                    xysGeneral.add(pos, j);
-                    j++;
+            for (int i = 1; i <= orderedForCover.size()-1; i++) {
+                sum = sum + orderedForCover.get(i);
+                xysGeneral.add(sum, pos);
+                pos++;
             }
 
+            sum = 0;
+            pos = 1;
             // Specific
             appResource = Project.getPrioritizationResource(prioParamaters[0] + "_Specific_" + prioParamaters[1] + "_" + prioParamaters[2] + ".xml");
             prioritization = ParsedMetric.getListFromPrio(appResource.getContentAsDOM());
-            orderedForCover = new ArrayList<>();
-            j = 1;
-            for (int i = 1; i < prioritization.size(); i++) {
+            orderedForCover = new ArrayList<>();;
+            orderedForCover.add(0, -1);
+            for (int i = 1; i <= prioritization.size()-1; i++) {
                 query = (XQueryService)DatabaseManager.getCollection(DBConnector.getURI() + DBConnector.getCollection().getName()).getService("XQueryService", "1.0");
                 query.setProperty(OutputKeys.INDENT, "yes");
                 query.setProperty(OutputKeys.ENCODING, "UTF-8");
@@ -1185,20 +1189,22 @@ public final class MainFrameController {
                 rs = query.execute(compiled);
                 recovered = rs.getResource(0).getContent().toString();
                 count = Integer.parseInt(recovered.substring(recovered.indexOf('>')+1, recovered.lastIndexOf('<')));
-                orderedForCover.add(count);
+                orderedForCover.add(i, count);
             }
-            Collections.sort(orderedForCover);
-            for (Integer pos : orderedForCover) {
-                    xysSpecific.add(pos, j);
-                    j++;
+            for (int i = 1; i <= orderedForCover.size()-1; i++) {
+                sum = sum + orderedForCover.get(i);
+                xysSpecific.add(sum, pos);
+                pos++;
             }
 
+            sum = 0;
+            pos = 1;
             // Lex
             appResource = Project.getPrioritizationResource(prioParamaters[0] + "_Lex_" + prioParamaters[1] + "_" + prioParamaters[2] + ".xml");
             prioritization = ParsedMetric.getListFromPrio(appResource.getContentAsDOM());
-            orderedForCover = new ArrayList<>();
-            j = 1;
-            for (int i = 1; i < prioritization.size(); i++) {
+            orderedForCover = new ArrayList<>();;
+            orderedForCover.add(0, -1);
+            for (int i = 1; i <= prioritization.size()-1; i++) {
                 query = (XQueryService)DatabaseManager.getCollection(DBConnector.getURI() + DBConnector.getCollection().getName()).getService("XQueryService", "1.0");
                 query.setProperty(OutputKeys.INDENT, "yes");
                 query.setProperty(OutputKeys.ENCODING, "UTF-8");
@@ -1206,12 +1212,12 @@ public final class MainFrameController {
                 rs = query.execute(compiled);
                 recovered = rs.getResource(0).getContent().toString();
                 count = Integer.parseInt(recovered.substring(recovered.indexOf('>')+1, recovered.lastIndexOf('<')));
-                orderedForCover.add(count);
+                orderedForCover.add(i, count);
             }
-            Collections.sort(orderedForCover);
-            for (Integer pos : orderedForCover) {
-                    xysLex.add(pos, j);
-                    j++;
+            for (int i = 1; i <= orderedForCover.size()-1; i++) {
+                sum = sum + orderedForCover.get(i);
+                xysLex.add(sum, pos);
+                pos++;
             }
 
             xysc.addSeries(xysStandard);
