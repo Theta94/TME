@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<preferences>
+   <connection>
+      <uri>xmldb:exist://localhost:8080/exist/xmlrpc</uri>
+      <collection>db/root</collection>
+   </connection>
+</preferences>
