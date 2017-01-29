@@ -462,7 +462,7 @@ public final class MainFrame extends JFrame {
         
         gbc.gridx = 2;
         gbc.gridy = 0;
-        lineChart = ChartFactory.createXYLineChart("Coverage Chart", "Number of covered instructions", "Test ordered by the number of covered instructions", null, PlotOrientation.HORIZONTAL, false, true, false);
+        lineChart = ChartFactory.createXYLineChart("Coverage Chart", "Number of covered instructions", "Test ordered by the prioritization", null, PlotOrientation.HORIZONTAL, false, true, false);
         chart = new ChartPanel(lineChart);
         chart.setPreferredSize(new Dimension(600, 400));
         coveragePanel.add(chart, gbc);

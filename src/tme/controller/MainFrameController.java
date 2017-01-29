@@ -1225,7 +1225,7 @@ public final class MainFrameController {
             xysc.addSeries(xysSpecific);
             xysc.addSeries(xysLex);
 
-            mainFrame.lineChart = ChartFactory.createXYLineChart("Coverage Chart", "Number of covered instructions", "Test ordered by the number of covered instructions", xysc, PlotOrientation.HORIZONTAL, true, true, false);
+            mainFrame.lineChart = ChartFactory.createXYLineChart("Coverage Chart", "Number of covered instructions", "Test ordered by the prioritization", xysc, PlotOrientation.HORIZONTAL, true, true, false);
             mainFrame.lineChart.getXYPlot().setRenderer(new XYSplineRenderer());
             mainFrame.chart.setChart(mainFrame.lineChart);
         } catch (XMLDBException | NullPointerException exc) {

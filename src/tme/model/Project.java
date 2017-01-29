@@ -61,7 +61,7 @@ public class Project {
             churnSet = new TreeSet<>(myVersionComparator);
             metricsSet = new HashSet<>();
             prioritizationSet = new HashSet<>();
-            coverageSet = new TreeSet<>(myVersionComparator);
+            coverageSet = new HashSet<>();
             
             try {
                 metricsCollection = DatabaseManager.getCollection(DBConnector.getURI() + DBConnector.getCollection().getName() + "/" + name + "/output/Metrics");
