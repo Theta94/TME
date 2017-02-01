@@ -133,7 +133,7 @@ public final class MainFrame extends JFrame {
         
         gbc.gridx = 1;
         gbc.anchor = GridBagConstraints.CENTER;
-        compRepBtn = new JButton("Extract Compact Reports");
+        compRepBtn = new JButton("Extract Compact Reports", new ImageIcon("images/compact.png"));
         reportPanel.add(compRepBtn, gbc);
         
         // Create JButton
@@ -402,10 +402,10 @@ public final class MainFrame extends JFrame {
         prioInputPanel.add(alfaParam, gbc);
         
         gbc.gridy = 4;
-        prioCalculateSelBtn = new JButton("Calculate selected prioritizations");
+        prioCalculateSelBtn = new JButton("Calculate selected prioritizations", new ImageIcon("images/prio.png"));
         prioInputPanel.add(prioCalculateSelBtn, gbc);
         gbc.gridy++;
-        distBtn = new JButton("Calculate distance");
+        distBtn = new JButton("Calculate distance", new ImageIcon("images/distance.png"));
         prioInputPanel.add(distBtn, gbc);
         gbc.gridy++;
 
@@ -440,7 +440,7 @@ public final class MainFrame extends JFrame {
         covMov = new JComboBox();
         coverageInput.add(covMov, gbc);
         gbc.gridy++;
-        covBtn = new JButton("Calculate coverage");
+        covBtn = new JButton("Calculate coverage", new ImageIcon("images/coverage.png"));
         coverageInput.add(covBtn, gbc);
         gbc.gridy++;
         covProgressBar = new JProgressBar(0, 100);
