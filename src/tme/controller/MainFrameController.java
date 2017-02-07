@@ -8,7 +8,6 @@ import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -119,7 +118,7 @@ public final class MainFrameController {
         mainFrame.getTabbedPane().addChangeListener(mainFrameTabCoverageSelectedEvent());
         mainFrame.getCovBtn().addActionListener(mainFrameClickCovBtnEvent());
         mainFrame.getCompRepBtn().addActionListener(mainFrameClickCompRepBtnEvent());
-        mainFrame.getCoverageList().addListSelectionListener(mainFrameCoverageElementListSelectedEvent());
+        mainFrame.getCoverageList().addListSelectionListener(mainFrameCoverageElementListSelectedEvent());        
     }
     
     
