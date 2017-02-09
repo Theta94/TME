@@ -11,6 +11,7 @@ public final class Main {
         MainFrame mainFrame = new MainFrame();
         ConnectionFrame connectionFrame = new ConnectionFrame();
         OpenProjectFrame openProjectFrame = new OpenProjectFrame();
+        NewProjectFrame newProjectFrame = new NewProjectFrame();
         MergeFrame mergeFrame = new MergeFrame();
         
         // Controllers declaration
@@ -21,9 +22,10 @@ public final class Main {
         
         MainConnectionFramesController mcfc = new MainConnectionFramesController(mainFrame, connectionFrame);
         MainOpenProjectFramesController mopfc = new MainOpenProjectFramesController(mainFrame, openProjectFrame);
+        MainNewProjectFramesController mnpfc = new MainNewProjectFramesController(mainFrame, newProjectFrame);
         MainMergeFramesController mmfc = new MainMergeFramesController(mainFrame, mergeFrame);
         
-        AllFramesController afc = new AllFramesController(mainFrame, connectionFrame, openProjectFrame, mergeFrame);
+        AllFramesController afc = new AllFramesController(mainFrame, connectionFrame, openProjectFrame, newProjectFrame, mergeFrame);
         
         // Controllers start
         mfc.start();
@@ -33,6 +35,7 @@ public final class Main {
   
         mcfc.start();
         mopfc.start();
+        mnpfc.start();
         mmfc.start();
         
         afc.start();

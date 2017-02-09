@@ -13,13 +13,15 @@ public final class AllFramesController {
     private final MainFrame mainFrame;
     private final ConnectionFrame connectionFrame;
     private final OpenProjectFrame openProjectFrame;
+    private final NewProjectFrame newProjectFrame;
     private final MergeFrame mergeFrame;
     
-    public AllFramesController(MainFrame mainFrame, ConnectionFrame connectionFrame, OpenProjectFrame openProjectFrame, MergeFrame mergeFrame) {
+    public AllFramesController(MainFrame mainFrame, ConnectionFrame connectionFrame, OpenProjectFrame openProjectFrame, NewProjectFrame newProjectFrame, MergeFrame mergeFrame) {
         this.mainFrame = mainFrame;
         this.connectionFrame = connectionFrame;
         this.openProjectFrame = openProjectFrame;
         this.mergeFrame = mergeFrame;
+        this.newProjectFrame = newProjectFrame;
     }
     
     public void start() {
@@ -36,6 +38,7 @@ public final class AllFramesController {
                 connectionFrame.dispose();
                 mainFrame.dispose();
                 openProjectFrame.dispose();
+                newProjectFrame.dispose();
                 mergeFrame.dispose();
                 
                 // Close the current project
