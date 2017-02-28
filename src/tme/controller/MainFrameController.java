@@ -1132,7 +1132,7 @@ public final class MainFrameController {
             // Standard Prioritization
             appResource = Project.getPrioritizationResource(prioParamaters[0] + "_Standard_" + prioParamaters[1] + "_" + prioParamaters[2] + ".xml");
             prioritization = ParsedMetric.getListFromPrio(appResource.getContentAsDOM());
-            orderedForCover = new ArrayList<>();;
+            orderedForCover = new ArrayList<>();
             orderedForCover.add(0, -1);
             for (int i = 1; i <= prioritization.size()-1; i++) {
                 query = (XQueryService)DatabaseManager.getCollection(DBConnector.getURI() + DBConnector.getCollection().getName()).getService("XQueryService", "1.0");
