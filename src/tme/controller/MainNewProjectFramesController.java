@@ -11,9 +11,7 @@ import org.xmldb.api.base.XMLDBException;
 import org.xmldb.api.modules.CollectionManagementService;
 import tme.view.MainFrame;
 import tme.view.NewProjectFrame;
-import tme.model.Project;
 import tme.model.DBConnector;
-import tme.model.XMLPreferences;
 
 public final class MainNewProjectFramesController {
     private final MainFrame mainFrame;
